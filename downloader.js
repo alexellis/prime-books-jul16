@@ -7,7 +7,7 @@ module.exports = class Downloader {
 
     download(url, done) {
         return this.dependencies.request.get(url, (err, res, body) => {
-            done(body);
+            return done(err, body);
         });
     }
 
