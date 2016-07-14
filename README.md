@@ -16,3 +16,10 @@ To produce code coverage run the following command through `npm` then inspect th
 $ npm run test-coverage
 ```
 
+### Running the example:
+
+```
+$ npm start -- https://wordpress.org/plugins/about/readme.txt
+```
+
+The URL can be changed and the code can be invoked directory replacing `npm start` by `node app.js` - the first argument is the URL of the text file to be downloaded.
