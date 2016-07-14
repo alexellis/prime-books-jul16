@@ -7,3 +7,4 @@ To install depedencies type in:
 `npm install`
 
 Then to run the unit tests type in `npm test`
+
