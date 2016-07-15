@@ -10,16 +10,11 @@ class WordFrequency {
         const dict = {};
         const tokens = this.parser.parse(text);
 
-        console.log(tokens);
+        // console.log(tokens);
 
         tokens.forEach(token => {
             let word = token.toLowerCase();
-            // if(word.length) {
-                if(Object.keys(dict).indexOf(word) == -1) {
-                    dict[word] = 0;
-                }
-                dict[word] = dict[word] + 1;
-            // }
+            dict[word] = (dict[word] || 0) +1;
         });
 
         return dict;
