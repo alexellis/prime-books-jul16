@@ -23,3 +23,8 @@ $ npm start -- https://wordpress.org/plugins/about/readme.txt
 ```
 
 The URL can be changed and the code can be invoked directory replacing `npm start` by `node app.js` - the first argument is the URL of the text file to be downloaded.
+
+A much longer document can be found below:
+
+[Railway Children story](http://www.loyalbooks.com/download/text/Railway-Children-by-E-Nesbit.txt)
+

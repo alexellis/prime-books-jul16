@@ -10,5 +10,4 @@ module.exports = class Downloader {
             return done(err, body);
         });
     }
-
 }

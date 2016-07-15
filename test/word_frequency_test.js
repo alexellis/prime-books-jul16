@@ -2,11 +2,12 @@
 
 const expect = require('chai').expect;
 const WordFrequency = require('../wordFrequency');
+const Parser = require('../parser');
 
 describe("Word frequency", () => {
     var sut;
     before(() => {
-        sut = new WordFrequency();
+        sut = new WordFrequency(new Parser());
     });
 
     it("finds a single word once", () => {
@@ -26,6 +27,12 @@ describe("Word frequency", () => {
 
         expect(frequency["train"]).to.equal(1);
         expect(frequency["yourself"]).to.equal(1);
+    });
+
+    it("ignores case", () => {
+        let frequency = sut.count("Train train TraIN");
+
+        expect(frequency["train"]).to.equal(3); 
     });
 });
 

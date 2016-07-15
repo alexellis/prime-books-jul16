@@ -1,18 +1,25 @@
 "use strict"
 
 class WordFrequency {
-    _split(text) {
-        return text.split(" ");
+
+    constructor(parser) {
+        this.parser = parser;
     }
 
     count(text) {
         const dict = {};
-        const tokens = this._split(text);
+        const tokens = this.parser.parse(text);
+
+        console.log(tokens);
+
         tokens.forEach(token => {
-            if(Object.keys(dict).indexOf(token) == -1) {
-                dict[token] = 0;
-            }
-            dict[token] = dict[token] + 1;
+            let word = token.toLowerCase();
+            // if(word.length) {
+                if(Object.keys(dict).indexOf(word) == -1) {
+                    dict[word] = 0;
+                }
+                dict[word] = dict[word] + 1;
+            // }
         });
 
         return dict;
