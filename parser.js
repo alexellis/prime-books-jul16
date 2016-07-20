@@ -2,56 +2,43 @@
 
 class Parser {
 
-    popComma(text) {
-      if(text.endsWith(",")) {
-        return text.substring(0, text.length-1);
+    stripWord(text) {
+      var token = "";
+      var stopChars = ["\"", ".", ",", "?", "\'", "!", ";", "(", ")", ":"];
+      for(let i = 0; i < text.length; i++) {
+        if(stopChars.indexOf(text[i])  == -1) {
+          token += text[i];
+        }
       }
-      return text;
+      return token;
     }
 
-    popFullstop(text) {
-      if(text.endsWith(".")) {
-        return text.substring(0, text.length-1);
-      }
-      return text;
-    }
-
-
-    popQuote(text) {
-      if(text.endsWith("\"")) {
-        return text.substring(0, text.length-1);
-      }
-      return text;
-    }
-
-    splitWhitespace(text) {
-        let parts = text.split(" ");
-        let allParts = [];
-
-        parts.forEach((p) => {
-          if(p.indexOf("\n") > -1) {
-            let intermediates = p.split("\n");
-            intermediates.forEach((intermediate) => {
-              allParts.push(intermediate);
-            });
-          } else {
-            allParts.push(p);
+    splitSeparators(text) {
+      var all = [];
+      var token = "";
+      var stop = [" ", "\n", "-"];
+      for(let i = 0; i <= text.length; i++) {
+        if(stop.indexOf(text[i]) >- 1 || i == text.length) {
+          if(token.length > 0) {
+            all.push(token);
+            token = "";
           }
-        });
-
-        return allParts;
+        }
+        else {
+          token += text[i];
+        }
+      }
+      return all;
     }
 
     parse(text) {
-        let splits =  this.splitWhitespace(text);
+        let splits = this.splitSeparators(text);
         let tokens = [];
-        splits.forEach((t)=> {
-          let token = this.popComma(t);
-          token = this.popFullstop(token);
-          token = this.popQuote(token);
-          
-          if(token) {
-            tokens.push(token);
+        splits.forEach((token) => {
+          let word = this.stripWord(token);
+
+          if(word) {
+            tokens.push(word);
           }
         });
         return tokens;
