@@ -5,7 +5,6 @@ const sinon = require('sinon');
 
 const Downloader = require('../downloader');
 
-
 describe("Downloads", () => {
     var sut;
     var sandbox;
@@ -22,14 +21,14 @@ describe("Downloads", () => {
         done = sandbox.spy();
     });
 
-    afterEach(() => { 
+    afterEach(() => {
         sandbox.reset();
     });
 
     it("a text file using request module", () => {
         let textFile = "Uncle Bob Martin suggests doing an extra 20 hours of training per week in your own time.";
         let textUrl = "http://bob.training/intro.txt";
-    
+
         var error = null;
         var response = {};
         request.get.yields(error, response, textFile);
@@ -41,7 +40,7 @@ describe("Downloads", () => {
 
     it("a text file using request module but gets and error", () => {
         let textUrl = "http://bob.training/outro.txt";
-    
+
         var error = "No such file";
         var response = {};
         var textFile;
