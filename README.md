@@ -9,8 +9,19 @@ This is an exercise in TDD with Node.js.
 
 **Todo:**
 
-Additional work in step 2 is required to add tests for more edge cases along with step 4 to piece together the prime checkout with the output from the word frequency analyzer.
 
+```
+Could have:
+
+[ ] Cache calculated primes
+[ ] Make use of more efficient divisor-based prime calculation
+[ ] Add http endpoint and some Cucumber tests
+
+Done:
+
+[X] Additional work in step 2 is required to add tests for more edge cases
+[X] Step 4 to piece together the prime checkout with the output from the word frequency analyzer.
+```
 
 ### Running the unit tests
 

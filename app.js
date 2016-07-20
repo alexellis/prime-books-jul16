@@ -19,6 +19,5 @@ downloader.download(site, (err, text) => {
           let frequency = results[word];
           console.log(word + ", count=" + results[word] + ", prime=" + primes.isPrime(frequency));
         });
-        // console.log(results);
     }
 });

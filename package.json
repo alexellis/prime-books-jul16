@@ -1,7 +1,7 @@
 {
   "name": "prime-books-jul16",
   "version": "1.0.0",
-  "description": "",
+  "description": "exercise in TDD",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/alexellis/prime-books-jul16.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Alex Ellis",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/alexellis/prime-books-jul16/issues"
