@@ -21,6 +21,7 @@ Done:
 [X] Add Dockerfile + instructions
 [X] Additional work in step 2 is required to add tests for more edge cases
 [X] Step 4 to piece together the prime checkout with the output from the word frequency analyzer.
+[X] Set-up code coverage report. 
 ```
 
 ### Running the unit tests
